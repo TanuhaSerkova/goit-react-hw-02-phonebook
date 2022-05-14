@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactList } from 'components/ContactList/ContactList';
 import { Container, Section, TitleH1, TitleH2 } from './App.styled';
 
 export class App extends Component {
@@ -89,6 +90,10 @@ export class App extends Component {
                 <Section title="Contacts">
                     <TitleH2>Contacts</TitleH2>
                     <Filter value={filter} onChange={this.handleFilter} />
+                    <ContactList
+                        contacts={visibleContacts}
+                        onDeleteContact={this.deleteContact}
+                    />
                 </Section>
             </Container>
         );
