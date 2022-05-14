@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { Filter } from 'components/Filter/Filter';
 import { Container, Section, TitleH1, TitleH2 } from './App.styled';
 
 export class App extends Component {
@@ -30,6 +31,11 @@ export class App extends Component {
             localStorage.setItem('contacts', JSON.stringify(nextContacts));
         }
     }
+
+    handleFilter = e => {
+        const { name, value } = e.currentTarget;
+        this.setState({ [name]: value });
+    };
 
     render() {
         const { filter } = this.state;
