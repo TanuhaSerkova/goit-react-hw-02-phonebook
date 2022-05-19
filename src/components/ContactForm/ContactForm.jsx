@@ -33,7 +33,7 @@ render() {
 
     return (
         <Form onSubmit={this.handleSubmit}>
-        <Label htmlFor={this.nameId}>
+        <Label>
             Name
             <Input
                 type="text"
@@ -46,7 +46,7 @@ render() {
                 />
         </Label>
 
-        <Label htmlFor={this.numberId}>
+        <Label>
             Number
             <Input
                 type="tel"
